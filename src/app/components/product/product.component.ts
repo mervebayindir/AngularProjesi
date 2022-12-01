@@ -10,9 +10,9 @@ import { ProductService } from 'src/app/services/product.service';
   styleUrls: ['./product.component.css']
 })
 export class ProductComponent {
-  dataLoaded=false;
-
   products:Product[] = [];
+  dataLoaded=false;
+  filterText="";
 
   constructor(private productService:ProductService, private activatedRoute:ActivatedRoute){}
 
