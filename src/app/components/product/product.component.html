@@ -6,7 +6,7 @@
     <input type="text" [(ngModel)]="filterText" class="form-control" id="filterText" 
     placeholder="Ürünü giriniz">
   </div>
-  <div *ngIf="filterText" class="alert alert-primary">
+  <div *ngIf="filterText.length>2" class="alert alert-primary">
     {{filterText}} aradınız.
   </div>
 <table *ngIf="dataLoaded==true" class="table table-striped-columns">
@@ -18,15 +18,20 @@
             <th>Fiyat</th>
             <th>Kdv'li Fiyat</th>
             <th>Stok Adedi</th>
+            <th></th>
         </tr>
     </thead>
-    <tr *ngFor="let product of products">
+    <tbody>
+        <tr *ngFor="let product of products | filterPipe:filterText">
         <td>{{product.productId}}</td>
         <td>{{product.productName | uppercase}}</td>
         <td>{{product.categoryId}}</td>
         <td>{{product.unitPrice | currency}}</td>
         <td>{{product.unitPrice | vatAdded:18 | currency}}</td>
         <td>{{product.unitsInStock}}</td>
+        <td><button (click)="addToCart(product)" type="button" class="btn btn-primary">Sepete ekle</button></td>
 
     </tr>
+    </tbody>
+    
 </table>
