@@ -1,0 +1,27 @@
+<form [formGroup]="registerForm" class="row g-3">
+    <div class="col-md-6">
+        <label for="inputEmail4" class="form-label">İsim</label>
+        <input type="text" class="form-control" formControlName="firstName" id="inputEmail4">
+    </div>
+    <div class="col-md-6">
+        <label for="inputPassword4" class="form-label">Soyisim</label>
+        <input type="text" class="form-control" formControlName="lastName" id="inputPassword4">
+    </div>
+    <div class="col-md-6">
+        <label for="inputPassword4" class="form-label">Email</label>
+        <input type="email" class="form-control" formControlName="email" id="inputPassword4">
+    </div>
+    <div class="col-md-7">
+        <label for="inputPassword4" class="form-label">Parola</label>
+        <input type="password" class="form-control" formControlName="password" id="inputPassword4">
+    </div>
+    <div class="col-md-7">
+        <label for="inputPassword4" class="form-label">Parola Tekrar</label>
+        <input type="password" class="form-control" formControlName="confirmPassword" id="inputPassword4">
+    </div>
+    <div class="col-12">
+    </div>
+    <div class="col-12">
+        <button type="submit" (click)="register()" label="Register" class="btn btn-primary">Üye ol</button>
+    </div>
+</form>

@@ -1,12 +1,10 @@
 import { Component } from '@angular/core';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { ActivatedRoute, Router } from '@angular/router';
-import { ToastrService } from 'ngx-toastr';
 import { Product } from 'src/app/models/product';
 import { ProductService } from 'src/app/services/product.service';
-import { ProductAddComponent } from '../product-add/product-add.component';
 import { DeleteModalComponent } from '../delete-modal/delete-modal.component';
-
+import { ProductAddComponent } from '../product-add/product-add.component';
 
 
 @Component({
@@ -19,9 +17,8 @@ export class AdminProductManagerComponent {
   products:Product[] = [];
   dataLoaded=false;
   
-  constructor(private productService:ProductService, 
-    private activatedRoute:ActivatedRoute,
-    private toastrService:ToastrService,
+  constructor(
+    private productService:ProductService, 
     private router: Router,
     public dialog: MatDialog ){}
 

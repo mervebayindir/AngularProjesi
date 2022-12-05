@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormControl, Validators, FormBuilder } from "@angular/forms";
+import {  Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { AuthService } from 'src/app/services/auth.service';
 
@@ -13,6 +14,7 @@ export class LoginComponent {
   loginForm:FormGroup;
 
   constructor(
+    private router:Router,
     private formBuilder:FormBuilder,
     private authService:AuthService,
     private toastrService:ToastrService
@@ -36,6 +38,7 @@ export class LoginComponent {
       this.authService.login(loginModel).subscribe(response=>{
         this.toastrService.info(response.message)
         localStorage.setItem("token", response.data.token)
+        this.router.navigate(["products"])
       }, responseError=>{
         console.log(responseError)
         this.toastrService.error("Parola hatası" + responseError.error)
