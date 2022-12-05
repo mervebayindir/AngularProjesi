@@ -4,7 +4,6 @@ import { ToastrService } from 'ngx-toastr';
 import { ProductService } from 'src/app/services/product.service';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Product } from 'src/app/models/product';
-import { Router } from '@angular/router';
 
 
 @Component({
