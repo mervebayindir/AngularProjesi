@@ -13,7 +13,9 @@ export class CartSummaryComponent {
 
   cartItems:CartItem[]=[];
 
-  constructor(private cartService:CartService, private toastrService:ToastrService){ }
+  constructor(
+    private cartService:CartService, 
+    private toastrService:ToastrService){ }
 
   ngOnInit(): void {
     this.getCart();
