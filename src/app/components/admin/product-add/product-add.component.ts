@@ -1,7 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 import { ProductService } from 'src/app/services/product.service';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { Product } from 'src/app/models/product';
+
 
 @Component({
   selector: 'app-product-add',
@@ -9,11 +12,17 @@ import { ProductService } from 'src/app/services/product.service';
   styleUrls: ['./product-add.component.css']
 })
 export class ProductAddComponent {
-  productAddForm : FormGroup;
-  constructor(
+
+  productAddForm:FormGroup;
+
+  product:Product;
+  constructor(public dialogRef: MatDialogRef<ProductAddComponent>,
+    @Inject(MAT_DIALOG_DATA) data:any,
     private formBuilder:FormBuilder, 
     private productService:ProductService, 
-    private toastrService:ToastrService){}
+    private toastrService:ToastrService){
+      this.product = data.product 
+    }
 
    ngOnInit(): void{
       this.createProductAddForm();
@@ -43,4 +52,8 @@ export class ProductAddComponent {
       this.toastrService.error("Formunuz eksik" ,"Dikatt!!!")
     }
    }
+
+   close() {
+    this.dialogRef.close();
+  }
 }

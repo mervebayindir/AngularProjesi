@@ -46,4 +46,5 @@ export class ProductComponent {
     this.toastrService.success("Sepete eklendi",product.productName);
     this.cartService.addToCart(product);
    }
+   
 }
