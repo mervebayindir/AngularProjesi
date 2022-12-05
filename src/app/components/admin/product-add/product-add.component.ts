@@ -4,6 +4,7 @@ import { ToastrService } from 'ngx-toastr';
 import { ProductService } from 'src/app/services/product.service';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Product } from 'src/app/models/product';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -18,7 +19,7 @@ export class ProductAddComponent {
   product:Product;
   constructor(public dialogRef: MatDialogRef<ProductAddComponent>,
     @Inject(MAT_DIALOG_DATA) data:any,
-    private formBuilder:FormBuilder, 
+    private formBuilder:FormBuilder,
     private productService:ProductService, 
     private toastrService:ToastrService){
       this.product = data.product 
