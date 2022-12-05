@@ -1,5 +1,5 @@
 import { Component, Inject } from '@angular/core';
-import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
+import { FormGroup } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { ToastrService } from 'ngx-toastr';
 import { Product } from 'src/app/models/product';
@@ -19,7 +19,6 @@ export class DeleteModalComponent {
   constructor(public dialogRef: MatDialogRef<DeleteModalComponent>,
     @Inject(MAT_DIALOG_DATA) data:any,
     private productService: ProductService,
-    private formBuilder:FormBuilder,
     private toastrService:ToastrService){
       this.id = data.id
     }
@@ -37,7 +36,7 @@ export class DeleteModalComponent {
     delete(){
       this.productService.delete(this.id).subscribe(response=>{
         
-         this.toastrService.success(response.message, "Sime işlemi başarılı")
+         this.toastrService.success(response.message, "Silme işlemi başarılı")
          debugger
       }, responseError=>{
         if (responseError.error.Errors.length>0) {
