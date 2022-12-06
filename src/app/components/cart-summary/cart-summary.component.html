@@ -15,12 +15,12 @@
 </li>-->
 
 <li *ngIf="cartItems.length>0" class="nav-item dropdown">
-    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+    <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
         aria-expanded="false">
         Sepetiniz
     </a>
     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-        <li *ngFor="let cartItem of cartItems"><a class="dropdown-item">{{cartItem.product.productName}}
+        <li *ngFor="let cartItem of cartItems"><a class="dropdown-item" >{{cartItem.product.productName}}
             <span class="badge text-bg-secondary">{{cartItem.quantity}} </span>
             <span class="badge text-bg-secondary" (click)="removeFromCart(cartItem.product)"> Sil</span></a>
         </li>
