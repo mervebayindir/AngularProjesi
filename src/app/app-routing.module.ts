@@ -8,7 +8,6 @@ import { LoginGuard } from './guards/login.guard';
 import { AdminProductManagerComponent } from './components/admin/admin-product-manager/admin-product-manager.component';
 import { ProductAddComponent } from './components/admin/product-add/product-add.component';
 import { RegisterComponent } from './components/register/register.component';
-import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 const routes: Routes = [
   {path:"",pathMatch:"full", component:ProductComponent},
@@ -19,7 +18,6 @@ const routes: Routes = [
   {path:"products/admin-product-manager", component:AdminProductManagerComponent, canActivate:[LoginGuard]},
   {path:"login", component:LoginComponent},
   {path:"register", component:RegisterComponent},
-  {path:"dashboard", component:DashboardComponent},
 
 ];
 

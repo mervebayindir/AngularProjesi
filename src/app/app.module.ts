@@ -23,9 +23,6 @@ import { AdminProductManagerComponent } from './components/admin/admin-product-m
 import { DeleteModalComponent } from './components/admin/delete-modal/delete-modal.component';
 import { ProductAddComponent } from './components/admin/product-add/product-add.component';
 import { RegisterComponent } from './components/register/register.component';
-import { DashboardComponent } from './components/dashboard/dashboard.component';
-
-//import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 
 
@@ -43,8 +40,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
     ProductEditComponent,
     AdminProductManagerComponent,
     DeleteModalComponent,
-    RegisterComponent,
-    DashboardComponent
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
