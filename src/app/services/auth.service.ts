@@ -11,7 +11,7 @@ import { TokenModel } from '../models/tokenModel';
   providedIn: 'root'
 })
 export class AuthService {
-
+  loggedIn=false
   apiUrl="https://localhost:44314/api/auth/";
   constructor(private httpClient:HttpClient) { }
 
@@ -20,7 +20,6 @@ export class AuthService {
   }
 
   register(registerModel:RegisterModel): Observable<SingleResponseModel <ResponseModel>>{
-    debugger
     return this.httpClient.post <SingleResponseModel<ResponseModel>>(this.apiUrl + "register", registerModel)
   }
 
@@ -31,4 +30,11 @@ export class AuthService {
       return false;
     }
   }
+  /* isLoggedIn(){    giriş yapıldıgında veya cıkıldıgında gırıs yap butonu gızle cıkıs yap butonu aktıf et
+    return this.loggedIn;
+  }
+  logOut(){
+    localStorage.removeItem("isLogged")
+    this.loggedIn=false
+  } */
 }

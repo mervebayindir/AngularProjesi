@@ -35,9 +35,7 @@ export class DeleteModalComponent {
   // }
     delete(){
       this.productService.delete(this.id).subscribe(response=>{
-        
          this.toastrService.success(response.message, "Silme işlemi başarılı")
-         debugger
       }, responseError=>{
         if (responseError.error.Errors.length>0) {
           for (let i = 0; i < responseError.error.Errors.length; i++) {

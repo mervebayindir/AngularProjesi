@@ -14,7 +14,6 @@ import { Product } from 'src/app/models/product';
 export class ProductAddComponent {
 
   productAddForm:FormGroup;
-
   product:Product;
   constructor(public dialogRef: MatDialogRef<ProductAddComponent>,
     @Inject(MAT_DIALOG_DATA) data:any,
@@ -23,7 +22,6 @@ export class ProductAddComponent {
     private toastrService:ToastrService){
       this.product = data.product 
     }
-
    ngOnInit(): void{
       this.createProductAddForm();
    }

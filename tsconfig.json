@@ -6,10 +6,10 @@
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,
     "strict": true,
-    "strictNullChecks": false,
+    "strictNullChecks": false,     // eklendi
     "noImplicitOverride": true,
     "noPropertyAccessFromIndexSignature": true,
-    "strictPropertyInitialization": false,
+    "strictPropertyInitialization": false,      // eklendi
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
     "sourceMap": true,

@@ -32,14 +32,7 @@ export class AdminProductManagerComponent {
    })
   }
    goToProductDetailsPage(productId:number){
-    debugger;
     this.router.navigate(["products/product-update/", productId])
-
-   }
-   goToProductAddPage( product:Product){
-    debugger;
-    this.router.navigate(["products/product/add", product])
-
    }
   showProductDeleteModal(productId: number) {
     const dialogConfig = new MatDialogConfig();
@@ -47,7 +40,6 @@ export class AdminProductManagerComponent {
     dialogConfig.disableClose = true;
     dialogConfig.autoFocus = true;
     dialogConfig.width = "25%";
-
     dialogConfig.data = {
         id: productId
     };
@@ -60,7 +52,6 @@ export class AdminProductManagerComponent {
   }
 
   addProductRouter(){
-    //alert("merhaba");
     const dialogConfig = new MatDialogConfig();
     dialogConfig.disableClose = false;
     dialogConfig.autoFocus = true;
@@ -70,10 +61,11 @@ export class AdminProductManagerComponent {
         id: this.products
     };
 
-    const productDeleteModal = this.dialog.open(ProductAddComponent, dialogConfig);
-
-    productDeleteModal.afterClosed().subscribe(result => {
+    const productAddModal = this.dialog.open(ProductAddComponent, dialogConfig);
+    dialogConfig.disableClose.valueOf()
+    productAddModal.afterClosed().subscribe(result => {
       this.ngOnInit();
+      
     })
    }
 }

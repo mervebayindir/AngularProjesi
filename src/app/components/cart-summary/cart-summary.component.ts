@@ -11,7 +11,7 @@ import { CartService } from 'src/app/services/cart.service';
 })
 export class CartSummaryComponent {
 
-  cartItems:CartItem[]=[];
+  cartItems:CartItem[]
 
   constructor(
     private cartService:CartService, 
@@ -25,6 +25,6 @@ export class CartSummaryComponent {
   }
   removeFromCart(product:Product){
     this.cartService.removeFromCart(product);
-    this.toastrService.error("sepetten silindi." + product.productName );
+    this.toastrService.error(" Sepetten silindi.", product.productName );
   }
 }

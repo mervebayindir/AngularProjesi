@@ -38,7 +38,7 @@ export class LoginComponent {
       this.authService.login(loginModel).subscribe(response=>{
         this.toastrService.info(response.message)
         localStorage.setItem("token", response.data.token)
-        this.router.navigate(["products"])
+        this.router.navigate(["products/admin-product-manager"])
       }, responseError=>{
         console.log(responseError)
         this.toastrService.error("Parola hatası" + responseError.error)

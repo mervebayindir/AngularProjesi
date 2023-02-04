@@ -11,34 +11,35 @@ import { SingleResponseModel } from '../models/singleResponseModel';
 })
 export class ProductService {
 
-  apiUrl="https://localhost:44314/api/";
+  apiUrl="https://localhost:44314/api/products/";
 
   constructor(private httpClient:HttpClient) { }
+  
     getProducts(): Observable<ListResponseModel<Product>>{
-      debugger
-      let newPath = this.apiUrl + "products/getall"
+      //debugger
+      let newPath = this.apiUrl + "getall"
       return this.httpClient.get<ListResponseModel<Product>>(newPath);
     }
 
     getProductById(id:number): Observable<SingleResponseModel<Product>>{
-      let newPath = this.apiUrl + "products/getbyid?id=" + id;
+      let newPath = this.apiUrl + "getbyid?id=" + id;
       return this.httpClient.get<SingleResponseModel<Product>>(newPath);
     }
     getProductsByCategory(categoryId:number): Observable<ListResponseModel<Product>>{
-      let newPath = this.apiUrl + "products/getbycategory?categoryId=" + categoryId
+      let newPath = this.apiUrl + "getbycategory?categoryId=" + categoryId
       return this.httpClient.get<ListResponseModel<Product>>(newPath);
     }
 
     add(product:Product): Observable<ResponseModel>{
-      return this.httpClient.post<ResponseModel>(this.apiUrl + "products/add", product)
+      return this.httpClient.post<ResponseModel>(this.apiUrl + "add", product)
     }
 
     update(product:Product) : Observable<ResponseModel>{
-      return this.httpClient.post<ResponseModel>(this.apiUrl + "products/update", product)
+      return this.httpClient.post<ResponseModel>(this.apiUrl + "update", product)
     }
     delete(id:any) : Observable<ResponseModel>{
       debugger
-      return this.httpClient.get<ResponseModel>(this.apiUrl + "products/delete?id=" + id)
+      return this.httpClient.get<ResponseModel>(this.apiUrl + "delete?id=" + id)
     }
   }
 

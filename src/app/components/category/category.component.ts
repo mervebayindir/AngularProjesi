@@ -33,12 +33,4 @@ export class CategoryComponent {
       return "list-group-item"
     }
   }
-
-  getAllCategoryClass(){
-    if(!this.currentCategory){
-      return "list-group-item active"
-    }else{
-      return "list-group-item"
-    }
-  }
 }

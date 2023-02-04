@@ -21,12 +21,12 @@
     </a>
     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
         <li *ngFor="let cartItem of cartItems"><a class="dropdown-item" >{{cartItem.product.productName}}
-            <span class="badge text-bg-secondary">{{cartItem.quantity}} </span>
-            <span class="badge text-bg-secondary" (click)="removeFromCart(cartItem.product)"> Sil</span></a>
+            <span class=" justify-content-between badge badge-primary">{{cartItem.quantity}} </span>
+            <span class="badge badge-primary" (click)="removeFromCart(cartItem.product)"> Sil</span></a>
         </li>
         <li>
             <hr class="dropdown-divider">
         </li>
         <li><a class="dropdown-item" href="#">Sepete git</a></li>
     </ul>
-</li>
+</li>  

@@ -4,8 +4,8 @@
             <div class="card-header">
                 <h5 class="title">Ürün ekle</h5>
             </div>
-            <div class="card-body" >
-                <form [formGroup]="productAddForm" > <!-- *ngIf="productAddForm"  -->
+            <div class="card-body">
+                <form [formGroup]="productAddForm"> <!-- *ngIf="productAddForm"  -->
                     <div class="mb-3">
                         <label for="productName">Ürün adı</label>
                         <div class="form-group">
@@ -36,8 +36,9 @@
                     </div>
                 </form>
             </div>
-            <div class="card-footer">
-                <button class="btn btn-fill btn-primary" (click)="add()">Ekle</button>
+            <div class="card-footer justify-content-evenly px-5 text-center row">
+                <button class="btn btn-fill btn-primary col-md-4 " (click)="close()">Close</button>
+                <button class="btn btn-fill btn-primary col-md-4" (click)="add()">Ekle</button>
             </div>
         </div>
     </div>
